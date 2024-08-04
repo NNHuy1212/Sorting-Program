@@ -18,9 +18,16 @@ def split_and_sort(nums):
 
     return odd_nums, even_nums
 
-nums = [9, 6, 12, 12, 3, 1, 5, 5, 7, 2]
-odd_nums, even_nums = split_and_sort(nums)
+# Get user input for the list of numbers
+user_input = input("Enter a list of numbers separated by spaces: ")
+nums = [int(num) for num in user_input.split()]
 
-print("Input:", nums)
-print("Odd numbers:", odd_nums)
-print("Even numbers:", even_nums)
+result = split_and_sort(nums)
+
+if isinstance(result, str):
+    print(result)
+else:
+    odd_nums, even_nums = result
+    print("Input:", nums)
+    print("Odd numbers:", odd_nums)
+    print("Even numbers:", even_nums)
